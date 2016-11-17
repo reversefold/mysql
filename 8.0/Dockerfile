@@ -31,6 +31,7 @@ RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys A4A9406876FCB
 
 ENV MYSQL_MAJOR 8.0
 ENV MYSQL_VERSION 8.0.0-dmr-1debian8
+ENV MYSQL_ALLOW_EMPTY_PASSWORD 1
 
 RUN echo "deb http://repo.mysql.com/apt/debian/ jessie mysql-${MYSQL_MAJOR}" > /etc/apt/sources.list.d/mysql.list
 

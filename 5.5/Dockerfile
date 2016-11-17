@@ -31,6 +31,7 @@ RUN apt-get update && apt-get install -y libaio1 pwgen && rm -rf /var/lib/apt/li
 
 ENV MYSQL_MAJOR 5.5
 ENV MYSQL_VERSION 5.5.53
+ENV MYSQL_ALLOW_EMPTY_PASSWORD 1
 
 RUN apt-get update && apt-get install -y ca-certificates wget --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	&& wget "https://cdn.mysql.com/Downloads/MySQL-$MYSQL_MAJOR/mysql-$MYSQL_VERSION-linux2.6-x86_64.tar.gz" -O mysql.tar.gz \
