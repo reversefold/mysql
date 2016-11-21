@@ -145,6 +145,8 @@ if [ "$1" = 'mysqld' -a -z "$wantHelp" ]; then
 		echo
 		echo 'MySQL init process done. Ready for start up.'
 		echo
+
+        touch /var/lib/mysql/init-finished
 	fi
 fi
 

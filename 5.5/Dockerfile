@@ -75,5 +75,7 @@ COPY docker-entrypoint.sh /usr/local/bin/
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
 ENTRYPOINT ["docker-entrypoint.sh"]
 
+HEALTHCHECK --interval=30s --timeout=30s --retries=3 CMD [ -e /var/lib/mysql/init-finished ] && mysql -uroot -e 'SHOW PROCESSLIST' || exit 1
+
 EXPOSE 3306
 CMD ["mysqld"]
